@@ -83,6 +83,10 @@ body {
     .pay, .watch-apps, .faq, footer {
         padding: 5rem 0 0 0;
         scroll-margin-top: 100px; // PARA O SCROLL IR EXATAMENTE NO CENTRO
+
+        @media (max-width: 768px) {
+            scroll-margin-top: 30px
+        }
     }
 
     button {
