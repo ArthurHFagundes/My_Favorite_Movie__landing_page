@@ -1,0 +1,33 @@
+@use 'variables';
+@use "sass:color";
+
+.pay {
+    &__list {
+        display: flex;
+        justify-content: center;
+
+        @media (max-width:768px) {
+            display: block;
+        }
+
+        &__item {
+            max-width: 200px;
+            margin: 0 100px; 
+            display: flex;
+            flex-direction: column;
+
+            .text {
+                margin-top: 50px;
+            }
+
+            @media (max-width:768px) {
+                margin: 0 auto;
+            }
+
+            button {
+                padding: 20px;
+                width: 200px;
+            }
+        }
+    }
+}

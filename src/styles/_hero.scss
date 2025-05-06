@@ -1,0 +1,33 @@
+.hero {
+    background-image: url(../images/hero_pc.png);
+    text-align: center;
+    background-size: cover;
+
+    @media (max-width: 768px) {
+        background-image: url(../images/hero_cell.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        padding-top: calc(50vw + 25px);
+    }
+    
+    .hero__content {
+        max-width: 640px;
+        padding: 50px;
+
+        @media (max-width:768px) {
+            padding: 10px;
+        }
+
+        &__rate {
+            &__grade {
+                margin: 0px;
+            }
+
+            &__stars {
+                font-size: 30px;
+                color: yellow;
+                margin: 0px;
+            }
+        }
+    }
+}

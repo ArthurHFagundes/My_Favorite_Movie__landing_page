@@ -1,0 +1,53 @@
+@use 'variables';
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: variables.$backgroundColor;
+    transition: background-color .5s ease;
+    z-index: 1;
+
+    &--is-hidden {
+        background-color: transparent;
+        transition: background-color .5s ease;
+
+        .header {
+            &__logo, &__links__item:first-child {
+                opacity: 0;
+                visibility: hidden; // PARA DEIXAR O ELEMENTO ESCONDIDO, MAS EXISTENTE
+                transition: opacity .5s ease;
+            }
+        }
+    }
+
+    &__container {
+        padding: 8px 36px; // CIMA BAIXO && ESQUERDO DIREITO
+        display: flex;
+        justify-content: flex-end;
+
+        @media (max-width: 768px) {
+            padding: 0 12px 0 20px;
+        }
+    }
+
+    &__links {
+        display: flex;
+
+        &__item {
+            margin: 5px;
+            transition: opacity .5s ease;
+        }
+    }
+
+    button {
+        @media (min-width: 1366px) {
+            padding: 10px;
+        }
+
+        @media (max-width: 768px) {
+            height: 40px;
+            border: 2px solid #040714;
+        }
+    }
+}

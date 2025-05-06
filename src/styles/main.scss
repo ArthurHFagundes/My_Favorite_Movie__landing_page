@@ -1,0 +1,103 @@
+@use 'variables';
+@use 'pay';
+@use 'watch-apps';
+@use 'faq';
+@use 'footer';
+@use 'hero';
+@use 'header';
+
+@use "sass:color";
+
+@font-face { // PARA INSERIR UM ARQUIVO DE FONTE EXTERNA
+    font-family: RobotoMono-text; // NOME
+    src: url(../fonts/RobotoMono-Medium.ttf); // ARQUIVO
+    font-weight: 400; // NEGRITO
+}
+
+@font-face { // PARA INSERIR UM ARQUIVO DE FONTE EXTERNA
+    font-family: CalSans-title; // NOME
+    src: url(../fonts/CalSans-Regular.ttf); // ARQUIVO
+    font-weight: 400; // NEGRITO
+}
+
+@mixin text($fontSize: 18px) {
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: variables.$textColor;
+    font-family: RobotoMono-text, sans-serif;
+}
+
+@mixin title($fontSize: 24px) {
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: variables.$textColor;
+    font-family: CalSans-title, sans-serif;
+}
+
+body {
+    background-color: variables.$backgroundColor;
+    text-align: center;
+
+    
+    .title {
+        @include title();
+        text-transform: uppercase;
+    }
+    
+    .title-main {
+        @include title();
+        text-transform: uppercase;
+        font-size: 40px;
+    }
+
+    .text {
+        @include text()
+    }
+
+    .text-disclaimer {
+        @include text(14px);
+        opacity: 50%;
+    }
+
+    .text-footer {
+        @include text(12px);
+        opacity: 80%;
+    }
+
+    .text-faq {
+        @include text(16px)
+    }
+
+    .text-button {
+        @include text(35px)
+    }
+
+    ul {
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .pay, .watch-apps, .faq, footer {
+        padding: 5rem 0 0 0;
+        scroll-margin-top: 100px; // PARA O SCROLL IR EXATAMENTE NO CENTRO
+    }
+
+    button {
+        background-color: variables.$buttonColor;
+        border: 1px solid variables.$buttonColor;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+            background-color: color.adjust(variables.$buttonColor, $lightness: 5%);
+        }
+    }
+}
+
+html{
+    scroll-behavior: smooth;
+}
